@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 速聴読の効果 - インタラクティブプレゼンテーション
 
-## Getting Started
+糸島学習塾YESによる「速聴読の効果」についてのインタラクティブなプレゼンテーション資料です。
 
-First, run the development server:
+## 特徴
+
+- **インタラクティブなナビゲーション**: キーボードやマウスで簡単にスライド間を移動
+- **プレゼンターモード**: 発表者用のノートを表示可能
+- **美しいアニメーション**: スムーズなスライド遷移とコンテンツ表示
+- **レスポンシブデザイン**: どのデバイスでも見やすい
+- **引用番号の表示**: 科学的根拠を明示
+
+## セットアップ
+
+### 必要な環境
+
+- Node.js 18.x 以降
+- npm または yarn
+
+### インストール
 
 ```bash
+# 依存関係をインストール（既にインストール済み）
+npm install
+
+# 開発サーバーを起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 使い方
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### キーボード操作
 
-## Learn More
+- **→（右矢印）/ Space**: 次のスライドへ
+- **←（左矢印）**: 前のスライドへ
+- **N**: プレゼンターノートの表示/非表示
+- **Home**: 最初のスライドへ
+- **End**: 最後のスライドへ
 
-To learn more about Next.js, take a look at the following resources:
+### マウス操作
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **次へボタン**: 次のスライドへ移動
+- **前へボタン**: 前のスライドへ移動
+- **進捗バーの丸**: クリックして特定のスライドへジャンプ
+- **ノート表示ボタン**: プレゼンターノートの表示/非表示
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## プレゼンターモード
 
-## Deploy on Vercel
+**N**キーを押すか、画面下部の「ノート表示」ボタンをクリックすると、プレゼンターモードが有効になります。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+プレゼンターモードでは：
+- 右側に発表者用のノートが表示されます
+- 各スライドで話すべき内容が箇条書きで表示されます
+- 次に話すことのリマインダーが表示されます
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+これにより、知識がない人でもスムーズにプレゼンテーションを進めることができます。
+
+## スライド構成
+
+1. **タイトルスライド**: 速聴読の効果
+2. **脳の得意分野**: 左脳と右脳の違い
+3. **脳の伝達速度**: 髄鞘による400倍の高速化
+4. **速聴の仕組み**: 右脳の覚醒メカニズム
+5. **天才の思考法**: 藤井七段の例
+6. **脳の可塑性**: 高速道路の例
+7. **汎化作用**: 一つの能力向上が全体に波及
+8. **まとめ**: 人生を変える1度の変化
+
+## カスタマイズ
+
+### スライドの内容を変更
+
+`data/slides.ts` ファイルを編集してスライドの内容を変更できます。
+
+```typescript
+export const slides: SlideData[] = [
+  {
+    type: 'title',
+    title: 'あなたのタイトル',
+    subtitle: 'サブタイトル',
+    author: '著者名',
+    notes: ['プレゼンターノート'],
+  },
+  // ... 他のスライド
+];
+```
+
+### スタイルのカスタマイズ
+
+- `app/globals.css`: グローバルなスタイル設定
+- `tailwind.config.ts`: Tailwind CSSの設定
+- 各コンポーネント内の `className` を編集
+
+## ビルド
+
+本番環境用にビルドするには：
+
+```bash
+npm run build
+npm start
+```
+
+## デプロイ
+
+Vercel、Netlify、またはその他のホスティングサービスに簡単にデプロイできます。
+
+### Vercelへのデプロイ
+
+```bash
+npm install -g vercel
+vercel
+```
+
+## 技術スタック
+
+- **Next.js 15**: Reactフレームワーク
+- **TypeScript**: 型安全な開発
+- **Tailwind CSS**: ユーティリティファーストのCSS
+- **React Hooks**: モダンなReact開発
+
+## ライセンス
+
+このプロジェクトは糸島学習塾YESの教育目的で作成されています。
