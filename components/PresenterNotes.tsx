@@ -32,15 +32,6 @@ export default function PresenterNotes({
           </div>
         ))}
       </div>
-
-      <div className="mt-6 p-4 bg-blue-900/50 rounded-lg border border-blue-700">
-        <h4 className="font-bold mb-2 text-sm">次に話すこと:</h4>
-        <ul className="text-xs space-y-1 text-gray-300">
-          {notes.map((note, index) => (
-            <li key={index}>• {note.split('。')[0]}。</li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 }

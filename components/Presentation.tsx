@@ -71,20 +71,6 @@ export default function Presentation() {
         showNotes={showNotes}
         onToggleNotes={() => setShowNotes(!showNotes)}
       />
-
-      {/* ヘルプオーバーレイ（初回のみ表示） */}
-      {currentSlide === 0 && (
-        <div className="absolute top-3 right-3 md:top-4 md:right-4 bg-white/95 backdrop-blur-sm p-3 md:p-4 rounded-lg shadow-lg text-xs max-w-[200px] md:max-w-none">
-          <h4 className="font-bold mb-1.5 md:mb-2 text-xs md:text-sm">キーボード操作</h4>
-          <ul className="space-y-0.5 md:space-y-1 text-[10px] md:text-xs">
-            <li>→ / Space: 次のスライド</li>
-            <li>←: 前のスライド</li>
-            <li>N: ノート表示切替</li>
-            <li>Home: 最初のスライド</li>
-            <li>End: 最後のスライド</li>
-          </ul>
-        </div>
-      )}
     </div>
   );
 }
